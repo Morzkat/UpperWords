@@ -1,5 +1,7 @@
 package sample;
 
+import sample.DecorateText.Text;
+
 import java.util.Scanner;
 
 public class Main
@@ -12,11 +14,15 @@ public class Main
         System.out.println("Introduce el texto a alterar");
 
         String str = sc.nextLine();
-        Controller controller = new Controller();
-        controller.printCaps(str,"Output.txt");
+        Text txt = new Text();
 
-        System.out.println("Resultado: ");
-        String read = controller.readerFile("Output.txt");
+        txt.setTextToUpper(str);
+        txt.PrintCaps(str);
+
+        txt.setTextToLower(str);
+        txt.PrintCaps(str);
+
+        String read = txt.readText("text.txt");
 
         System.out.println(read);
     }
